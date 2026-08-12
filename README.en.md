@@ -13,7 +13,7 @@
 </p>
 
 > [!NOTE]
-> Peixue is being prepared for its first public release. Read [Privacy and security](#privacy-and-security) and the [deployment guide](docs/DEPLOYMENT.md). Back up your data before every upgrade.
+> Peixue is open source and remains at an early release stage. Read [Privacy and security](#privacy-and-security) and the [deployment guide](docs/DEPLOYMENT.md). Back up your data before every upgrade.
 
 ## Why Peixue exists
 
