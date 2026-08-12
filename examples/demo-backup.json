@@ -1,0 +1,71 @@
+{
+  "kids": [
+    {
+      "id": "demo-kid-xiaohe",
+      "name": "小禾（示例）",
+      "grade": "三年级",
+      "avatar": "🌱",
+      "since": "演示数据",
+      "profile": {
+        "current_topics": "两位数乘法、阅读理解",
+        "strengths": "愿意说出自己的思路",
+        "weaknesses": "容易跳过单位和题目条件",
+        "notes": "所有内容均为虚构示例"
+      }
+    }
+  ],
+  "moments": [
+    {
+      "id": "demo-moment-math-001",
+      "kidId": "demo-kid-xiaohe",
+      "subject": "数学",
+      "problem": "文具店有 4 盒铅笔，每盒 12 支，一共有多少支铅笔？",
+      "context": "示例观察：孩子列出了 12 + 4，提醒后能说出“4 个 12”。",
+      "analysis": null,
+      "reflection": "下次先让孩子圈出“每盒”和“4 盒”。",
+      "tag": "概念",
+      "status": "需复习",
+      "intervalDays": 1,
+      "wrongStreak": 1,
+      "lastWrongAt": 1704067200000,
+      "created_by": "demo",
+      "createdAt": 1704067200000,
+      "updatedAt": 1704067200000
+    },
+    {
+      "id": "demo-moment-chinese-001",
+      "kidId": "demo-kid-xiaohe",
+      "subject": "语文",
+      "problem": "读完《守株待兔》后，用自己的话说说农夫为什么没有再得到兔子。",
+      "context": "示例观察：能复述故事，但还没有说出“偶然不能当成规律”。",
+      "analysis": null,
+      "reflection": "可以联系生活中“碰巧一次成功”的例子再聊。",
+      "tag": "理解",
+      "status": "待复盘",
+      "intervalDays": 2,
+      "wrongStreak": 0,
+      "lastWrongAt": null,
+      "created_by": "demo",
+      "createdAt": 1704153600000,
+      "updatedAt": 1704153600000
+    },
+    {
+      "id": "demo-moment-question-001",
+      "kidId": "demo-kid-xiaohe",
+      "subject": "数学",
+      "problem": "为什么 0 乘任何数都等于 0？",
+      "context": "示例观察：这是孩子主动提出的好问题。",
+      "analysis": null,
+      "reflection": "用“0 组，每组有几件”摆实物说明。",
+      "tag": "好问题",
+      "status": "已理解",
+      "intervalDays": 4,
+      "wrongStreak": 0,
+      "lastWrongAt": null,
+      "created_by": "demo",
+      "createdAt": 1704240000000,
+      "updatedAt": 1704240000000
+    }
+  ],
+  "activeKidId": "demo-kid-xiaohe"
+}

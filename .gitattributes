@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+
+# Generated bundles contain intentional whitespace inside template literals.
+peixue-frontend/assets/*.js whitespace=-blank-at-eol

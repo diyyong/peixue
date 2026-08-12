@@ -1,0 +1,43 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Dependencies and build caches
+node_modules/
+**/node_modules/
+.npm/
+coverage/
+peixue-frontend/dist/
+peixue-frontend/.vite/
+
+# Local source-recovery folders (kept outside the public repository)
+/qianduan/
+/yuanma/
+
+# Runtime data and backups
+*.log
+logs/
+backups/
+mysql-data/
+
+# Host-specific web-server artifacts
+peixue-frontend/.htaccess
+peixue-frontend/.user.ini
+peixue-frontend/.well-known/
+peixue-frontend/icons.svg
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.swp
+*~

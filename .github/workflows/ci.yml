@@ -1,0 +1,71 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: |
+            peixue-frontend/package-lock.json
+            peixue-server/package-lock.json
+
+      - name: Check repository assets
+        run: node scripts/check-repository.mjs
+
+      - name: Install frontend dependencies
+        working-directory: peixue-frontend
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Lint frontend
+        working-directory: peixue-frontend
+        run: npm run lint
+
+      - name: Test frontend
+        working-directory: peixue-frontend
+        run: npm test
+
+      - name: Build frontend
+        working-directory: peixue-frontend
+        run: npm run build
+
+      - name: Audit frontend production dependencies
+        working-directory: peixue-frontend
+        run: npm audit --omit=dev --audit-level=high
+
+      - name: Install backend dependencies
+        working-directory: peixue-server
+        run: npm ci
+
+      - name: Test backend
+        working-directory: peixue-server
+        run: npm test
+
+      - name: Audit backend production dependencies
+        working-directory: peixue-server
+        run: npm audit --omit=dev --audit-level=high
+
+  container-builds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build backend image
+        run: docker build --tag peixue-backend:test peixue-server
+
+      - name: Build frontend image
+        run: docker build --tag peixue-frontend:test peixue-frontend

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; form-action 'self'"
+    />
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#F8F4EB" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="陪学笔记" />
+
+    <link rel="apple-touch-icon" href="/seed.png" />
+
+    <title>陪学笔记</title>
+
+    <style>
+      /* 基础样式：立刻出来，不等任何网络资源 */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        background-color: #F8F4EB;
+        /* 系统字体栈。不再依赖 Google Fonts 以避免国内访问慢 */
+        font-family:
+          -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+          "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+      }
+      input,
+      textarea,
+      select {
+        font-size: 16px; /* 关键：iOS 上输入框字体不小于 16px 可以防止点击时自动放大视口 */
+      }
+      /* 初始骨架，让背景色立刻出来而不是白屏 */
+      #root:empty::before {
+        content: "";
+        display: block;
+        min-height: 100vh;
+        background-color: #F8F4EB;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
