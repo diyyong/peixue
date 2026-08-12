@@ -1,10 +1,10 @@
-FROM node:22-alpine AS dependencies
+FROM node:26-alpine AS dependencies
 
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 
-FROM node:22-alpine
+FROM node:26-alpine
 
 ENV NODE_ENV=production
 WORKDIR /app
